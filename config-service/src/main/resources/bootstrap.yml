@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    server:
+      git:
+        uri: https://github.com/mahc30/BackendMonolito.git
+        searchPaths: config-data
+        username: ${GIT_USER}
+        password: ${GIT_PASSWORD}
+  security:
+    user:
+      name: root
+      password: s3cr3t
