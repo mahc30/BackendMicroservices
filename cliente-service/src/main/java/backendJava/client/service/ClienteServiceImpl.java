@@ -1,5 +1,6 @@
 package backendJava.client.service;
 
+import backendJava.client.client.FotoClient;
 import backendJava.client.dto.ClienteDTO;
 import backendJava.client.dto.ClienteMapper;
 import backendJava.client.entity.Cliente;
@@ -8,6 +9,7 @@ import backendJava.client.exception.Cliente.ClienteAlreadyExistsException;
 import backendJava.client.exception.Cliente.ClienteNotFoundException;
 import backendJava.client.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +18,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClienteServiceImpl implements ClienteService{
     private final ClienteRepository clienteRepository;
-    //private final FotoRepository fotoRepository;
+
+    @Autowired
+    FotoClient fotoClient;
 
     @Override
     public List<ClienteDTO> listAllCliente() {
@@ -59,7 +63,7 @@ public class ClienteServiceImpl implements ClienteService{
 
         if(clienteDB == null) throw new ClienteNotFoundException(tipoIdentificacion, numeroIdentificacion);
 
-        //fotoRepository.deleteById(clienteDB.getFotoMongoId());
+        if(!clienteDB.getFotoMongoId().isEmpty()) fotoClient.deleteFoto(clienteDB.getFotoMongoId(), tipoIdentificacion, numeroIdentificacion);
         clienteRepository.deleteById(clienteDB.getId());
     }
 

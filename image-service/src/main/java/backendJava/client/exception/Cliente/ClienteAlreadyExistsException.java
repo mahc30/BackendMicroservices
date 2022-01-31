@@ -1,6 +1,7 @@
 package backendJava.client.exception.Cliente;
 
-import backendJava.client.entity.TipoIdentificacion;
+
+import backendJava.client.model.TipoIdentificacion;
 
 public class ClienteAlreadyExistsException extends RuntimeException{
     public ClienteAlreadyExistsException(TipoIdentificacion tipoId, String numeroId) {

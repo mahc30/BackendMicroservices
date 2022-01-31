@@ -1,6 +1,7 @@
 package backendJava.client.controller;
 
 import backendJava.client.dto.FotoDTO;
+import backendJava.client.model.TipoIdentificacion;
 import backendJava.client.service.FotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,9 +20,6 @@ public class FotoController {
     @Autowired
     private FotoService fotoService;
 
-    //@Autowired
-    //ClienteService clienteService;
-
     @GetMapping
     public ResponseEntity<List<FotoDTO>> listFoto(){
         return ResponseEntity.ok(fotoService.listAllFoto());
@@ -34,18 +32,17 @@ public class FotoController {
         else return  ResponseEntity.ok(foto);
     }
 
-    /*
     @PostMapping(value = "/{tipoIdentificacion}/{NumeroIdentificacion}")
     public ResponseEntity<FotoDTO> createFoto(@PathVariable("tipoIdentificacion") TipoIdentificacion tipoId, @PathVariable("NumeroIdentificacion") String numeroId, @RequestPart MultipartFile file){
         return ResponseEntity.ok(fotoService.createFoto(tipoId, numeroId, file));
     }
 
     @DeleteMapping(value="/{tipoIdentificacion}/{NumeroIdentificacion}/{id}")
-    public ResponseEntity<FotoDTO> deleteCliente(@PathVariable("id") String id, @PathVariable("tipoIdentificacion") TipoIdentificacion tipoId, @PathVariable("NumeroIdentificacion") String numeroId){
+    public ResponseEntity<FotoDTO> deleteFoto(@PathVariable("id") String id, @PathVariable("tipoIdentificacion") TipoIdentificacion tipoId, @PathVariable("NumeroIdentificacion") String numeroId){
         fotoService.deleteFoto(tipoId, numeroId, id);
         return  ResponseEntity.ok().build();
     }
-    */
+
     @PutMapping(value="/{id}")
     public ResponseEntity<FotoDTO> updateFoto(@PathVariable("id") String id, @RequestPart MultipartFile file){
         return ResponseEntity.ok(fotoService.updateFoto(id, file));

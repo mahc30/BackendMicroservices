@@ -1,5 +1,7 @@
 package backendJava.client.exception;
 
+import backendJava.client.exception.Cliente.ClienteAlreadyExistsException;
+import backendJava.client.exception.Cliente.ClienteNotFoundException;
 import backendJava.client.exception.Foto.FotoDeleteErrorException;
 import backendJava.client.exception.Foto.FotoFileConversionErrorException;
 import backendJava.client.exception.Foto.FotoNotFoundException;
@@ -19,6 +21,13 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
     private static final ConcurrentHashMap<String, Integer> STATUS_CODES = new ConcurrentHashMap<>();
 
     public ControllerAdvisor() {
+        STATUS_CODES.put(
+                ClienteNotFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value()
+        );
+
+        STATUS_CODES.put(
+                ClienteAlreadyExistsException.class.getSimpleName(), HttpStatus.CONFLICT.value()
+        );
         STATUS_CODES.put(
                 FotoNotFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value()
         );

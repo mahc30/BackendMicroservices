@@ -1,5 +1,6 @@
 package backendJava.client.entity;
 
+import backendJava.client.model.Cliente;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,6 +32,8 @@ public class Foto implements Serializable {
     @NotNull
     private Binary file;
 
+    @Transient
+    private Cliente cliente;
     public static Binary convertMultipartToBinary(MultipartFile file){
         Binary bin = null;
         try{
