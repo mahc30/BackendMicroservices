@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'microservicios'
+group = 'microservices.backend'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -19,6 +19,7 @@ ext {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.cloud:spring-cloud-config-server'
+	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }

@@ -1,14 +1,16 @@
 server:
-  port: 8081
+  port: 8080
 
 spring:
   cloud:
-    server:
-      git:
-        uri: https://github.com/mahc30/BackendMonolito.git
-        searchPaths: config-data
-        username: ${GIT_USER}
-        password: ${GIT_PASSWORD}
+    config:
+      server:
+        git:
+          uri: https://github.com/mahc30/BackendMicroservices
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+          default-label: "main"
   security:
     user:
       name: root

@@ -1,0 +1,6 @@
+/config-service/build
+/config-service/.gradle
+/cliente-service/build
+/cliente-service/.gradle
+/image-service/build
+/image-service/.gradle

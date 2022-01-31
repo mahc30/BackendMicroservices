@@ -1,4 +1,4 @@
-package microservicios.configservice;
+package microservices.backend.configservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
