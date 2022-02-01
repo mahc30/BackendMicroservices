@@ -40,17 +40,23 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/
+      
 Feign:
   hystrix:
     enabled: true
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream, health
-      base-path: /
+        include: "*"
       
