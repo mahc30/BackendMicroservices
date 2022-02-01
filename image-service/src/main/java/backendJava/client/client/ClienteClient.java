@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "cliente-service")
+@FeignClient(name = "cliente-service", fallback = ClienteHystrixFallbackFactory.class)
 public interface ClienteClient {
     @GetMapping(value="/clients/{tipoIdentificacionId}/{numeroIdentificacion}")
     public ResponseEntity<ClienteDTO> getCliente(@PathVariable("tipoIdentificacionId") TipoIdentificacion tipoIdentificacion, @PathVariable("numeroIdentificacion") String numeroIdentificacion);

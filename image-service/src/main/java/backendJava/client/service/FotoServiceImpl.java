@@ -11,6 +11,7 @@ import backendJava.client.exception.Foto.FotoNotFoundException;
 import backendJava.client.model.Cliente;
 import backendJava.client.model.TipoIdentificacion;
 import backendJava.client.repository.FotoRepository;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

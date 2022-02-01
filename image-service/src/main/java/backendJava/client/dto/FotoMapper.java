@@ -17,8 +17,9 @@ public interface FotoMapper {
 
     @Mapping(source="id", target="id")
     @Mapping(source="file", target="file")
+    @Mapping(target = "cliente", ignore = true)
     Foto fotoDtoToFoto(FotoDTO foto);
 
-    List<FotoDTO> mapEntityListToDtoList(List<Foto> clientes);
-    List<Foto> mapDtoListToEntityList(List<FotoDTO> clientes);
+    List<FotoDTO> mapEntityListToDtoList(List<Foto> fotos);
+    List<Foto> mapDtoListToEntityList(List<FotoDTO> fotos);
 }

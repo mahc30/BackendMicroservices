@@ -13,7 +13,9 @@ public class ClienteDTO {
     private String nombres;
     private String apellidos;
     private String numeroIdentificacion;
-    private String fotoMongoId; //String identificación de Mongo
+
+    @Builder.Default
+    private String fotoMongoId = ""; //String identificación de Mongo
     private int edad;
     private String ciudad;
     private String tipoIdentificacion;

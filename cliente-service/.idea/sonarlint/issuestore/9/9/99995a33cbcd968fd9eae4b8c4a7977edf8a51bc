@@ -1,6 +1,10 @@
 
+I
+java:S3011N",This accessibility update should be removed.(˜ÂÓ˜8„Ñ‚²ë/
 n
-java:S1128"XRemove this unused import 'springfox.documentation.swagger2.annotations.EnableSwagger2'.(ùÔ¨
+java:S1128"XRemove this unused import 'springfox.documentation.swagger2.annotations.EnableSwagger2'.(ùÔ¨
 l
-java:S1128"QRemove this unused import 'springfox.documentation.builders.PathSelectors.regex'.(ËÆË±øÿÿÿÿ
+java:S1128"QRemove this unused import 'springfox.documentation.builders.PathSelectors.regex'.(ËÆË±øÿÿÿÿ
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(àÙÑµ
+`
+java:S2259N"CA "NullPointerException" could be thrown; "field" is nullable here.(˜ÂÓ˜8’Ñ‚²ë/
