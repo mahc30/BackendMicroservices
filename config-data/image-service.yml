@@ -21,6 +21,8 @@ eureka:
 Feign:
   hystrix:
     enabled: true
+  circuitbreaker:
+    enabled: true
 
 resilience4j:
   circuitbreaker:
