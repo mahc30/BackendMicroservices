@@ -20,19 +20,19 @@ spring:
     jdbc:
       initialize-schema: always
   jpa:
-    show-sql: true
+    show-sql: false
     database-platform: org.hibernate.dialect.MySQL8Dialect
     defer-datasource-initialization: true
     hibernate:
       dialect: org.hibernate.dialect.MySQL8Dialect
       ddl-auto: create-drop
-      show-sql: true
+      show-sql: false
       use_sql_comments: false
       format_sql: false
     generate-ddl: true
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console
       settings:
         trace: false
@@ -45,9 +45,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/
-      
+
 Feign:
   hystrix:
+    enabled: true
+  circuitbreaker:
     enabled: true
 
 hystrix:
