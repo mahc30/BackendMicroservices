@@ -47,7 +47,7 @@ eureka:
 Feign:
   hystrix:
     enabled: true
-    
+
 resilience4j:
   circuitbreaker:
     instances:
@@ -69,7 +69,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "health"
   endpoint:
     health:
       show-details: always
