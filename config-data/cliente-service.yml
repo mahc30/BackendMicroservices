@@ -47,7 +47,8 @@ eureka:
 Feign:
   hystrix:
     enabled: true
-    
+    dashboard:
+      proxy-stream-allow-list: "*",  http://localhost:8091/actuator/hystrix.stream, http://localhost:8091/hystrix.stream
 management:
   endpoints:
     web:
