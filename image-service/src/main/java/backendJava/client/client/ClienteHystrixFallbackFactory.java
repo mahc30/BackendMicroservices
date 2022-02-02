@@ -12,7 +12,6 @@ public class ClienteHystrixFallbackFactory implements ClienteClient {
 
     @Override
     public ResponseEntity<ClienteDTO> getCliente(TipoIdentificacion tipoIdentificacion, String numeroIdentificacion) {
-        System.out.println("FALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACKFALLBACK");
         return ResponseEntity.ok(
                 ClienteDTO.builder().
                         nombres("Error")

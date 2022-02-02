@@ -2,7 +2,6 @@ package backendJava.client.entity;
 
 import backendJava.client.model.Cliente;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +10,10 @@ import lombok.NoArgsConstructor;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Data
@@ -39,8 +37,10 @@ public class Foto implements Serializable {
         try{
             bin = new Binary(BsonBinarySubType.BINARY, file.getBytes());
         }
-        finally {
-            return bin;
+        catch (Exception e){
+            System.out.println(e.toString());
         }
+
+        return bin;
     }
 }
