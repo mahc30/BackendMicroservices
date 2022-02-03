@@ -17,3 +17,13 @@ q
 Asrc/main/java/backendJava/client/exception/ControllerAdvisor.java,7\a\7a79a9a37190478e17cdbecf2fdf8d946ef5b3a5
 o
 ?src/main/java/backendJava/client/controller/FotoController.java,a\5\a500338500291566261e614f6e75d17e35c0dc25
+j
+:src/main/java/backendJava/client/client/ClienteClient.java,b\c\bcaf49ef6b995f5f264dff717880d54b9aef1d5f
+a
+1src/main/java/backendJava/client/dto/FotoDTO.java,4\b\4b338258ec456cdd3daeb2b1bbe2980833a3e180
+d
+4src/main/java/backendJava/client/dto/ClienteDTO.java,f\b\fbfb919879f3c9b7b6cb34dd8d67015c3ce1adfc
+a
+1src/main/java/backendJava/client/entity/Foto.java,e\a\ea0472580a50523c4ac8fb9444c1df6bf5ec7df6
+z
+Jsrc/main/java/backendJava/client/client/ClienteHystrixFallbackFactory.java,d\4\d4aa13b2feace070344bb612c20fe2b7b5ad9105

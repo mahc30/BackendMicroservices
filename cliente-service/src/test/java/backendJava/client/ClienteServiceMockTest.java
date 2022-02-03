@@ -1,5 +1,6 @@
 package backendJava.client;
 
+import backendJava.client.client.FotoClient;
 import backendJava.client.dto.ClienteDTO;
 import backendJava.client.entity.Ciudad;
 import backendJava.client.entity.Cliente;
@@ -27,7 +28,7 @@ public class ClienteServiceMockTest {
     @Mock
     private ClienteRepository clienteRepository;
     @Mock
-    private FotoRepository fotoRepository;
+    private FotoClient fotoClient;
 
     private Cliente cliente1, cliente2;
 
@@ -36,7 +37,7 @@ public class ClienteServiceMockTest {
     @BeforeEach
     public void setup(){
         MockitoAnnotations.openMocks(this);
-        clienteService = new ClienteServiceImpl(clienteRepository, fotoRepository);
+        clienteService = new ClienteServiceImpl(clienteRepository);
 
         cliente1 = Cliente
                 .builder()
