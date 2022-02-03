@@ -25,11 +25,6 @@ public class FotoServiceMockTest {
     @Autowired
     private FotoService fotoService;
 
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.openMocks(this);
-    }
-
     @Test
     public void whenValidGetAllFoto_ThenReturnListFoto(){
         List<FotoDTO> found = fotoService.listAllFoto();
