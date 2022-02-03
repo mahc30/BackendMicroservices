@@ -19,6 +19,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://host.docker.internal:8099/eureka/
+  instance:
+    prefer-ip-address: true
 
 Feign:
   hystrix:
