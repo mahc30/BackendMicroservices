@@ -1,7 +1,7 @@
 package backendJava.client.service;
 
 import backendJava.client.dto.FotoDTO;
-import backendJava.client.model.TipoIdentificacion;
+import backendJava.client.client.model.TipoIdentificacion;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

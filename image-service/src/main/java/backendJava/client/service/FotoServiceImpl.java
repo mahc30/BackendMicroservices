@@ -1,17 +1,15 @@
 package backendJava.client.service;
 
 import backendJava.client.client.ClienteClient;
-import backendJava.client.dto.ClienteDTO;
 import backendJava.client.dto.ClienteMapper;
 import backendJava.client.dto.FotoDTO;
 import backendJava.client.dto.FotoMapper;
 import backendJava.client.entity.Foto;
-import backendJava.client.exception.Cliente.ClienteNotFoundException;
-import backendJava.client.exception.Foto.FotoNotFoundException;
-import backendJava.client.model.Cliente;
-import backendJava.client.model.TipoIdentificacion;
+import backendJava.client.controller.exception.Cliente.ClienteNotFoundException;
+import backendJava.client.controller.exception.Foto.FotoNotFoundException;
+import backendJava.client.client.model.Cliente;
+import backendJava.client.client.model.TipoIdentificacion;
 import backendJava.client.repository.FotoRepository;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

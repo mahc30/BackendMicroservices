@@ -1,6 +1,6 @@
 package backendJava.client.entity;
 
-import backendJava.client.model.Cliente;
+import backendJava.client.client.model.Cliente;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,10 @@
-package backendJava.client.exception;
+package backendJava.client.controller.exception;
 
-import backendJava.client.exception.Cliente.ClienteAlreadyExistsException;
-import backendJava.client.exception.Cliente.ClienteNotFoundException;
+import backendJava.client.controller.exception.Foto.FotoFileConversionErrorException;
+import backendJava.client.controller.exception.Cliente.ClienteAlreadyExistsException;
+import backendJava.client.controller.exception.Cliente.ClienteNotFoundException;
+import backendJava.client.controller.exception.Foto.FotoDeleteErrorException;
+import backendJava.client.controller.exception.Foto.FotoNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -25,7 +28,15 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
         STATUS_CODES.put(
                 ClienteAlreadyExistsException.class.getSimpleName(), HttpStatus.CONFLICT.value()
         );
-
+        STATUS_CODES.put(
+                FotoNotFoundException.class.getSimpleName(), HttpStatus.NOT_FOUND.value()
+        );
+        STATUS_CODES.put(
+                FotoFileConversionErrorException.class.getSimpleName(), HttpStatus.INTERNAL_SERVER_ERROR.value()
+        );
+        STATUS_CODES.put(
+                FotoDeleteErrorException.class.getSimpleName(), HttpStatus.INTERNAL_SERVER_ERROR.value()
+        );
         STATUS_CODES.put(
                 ConstraintViolationException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value()
         );

@@ -1,4 +1,4 @@
-package backendJava.client.exception.Foto;
+package backendJava.client.controller.exception.Foto;
 
 public class FotoDeleteErrorException extends RuntimeException{
     public FotoDeleteErrorException(String id){

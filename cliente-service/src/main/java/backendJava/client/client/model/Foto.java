@@ -1,4 +1,4 @@
-package backendJava.client.model;
+package backendJava.client.client.model;
 
 import lombok.Data;
 import org.bson.types.Binary;

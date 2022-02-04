@@ -1,7 +1,7 @@
-package backendJava.client.exception.Cliente;
+package backendJava.client.controller.exception.Cliente;
 
 
-import backendJava.client.model.TipoIdentificacion;
+import backendJava.client.client.model.TipoIdentificacion;
 
 public class ClienteNotFoundException extends RuntimeException{
         public ClienteNotFoundException(TipoIdentificacion tipoId, String numeroId) {

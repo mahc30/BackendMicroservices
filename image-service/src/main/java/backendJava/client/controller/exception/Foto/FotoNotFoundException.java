@@ -1,4 +1,4 @@
-package backendJava.client.exception.Foto;
+package backendJava.client.controller.exception.Foto;
 
 public class FotoNotFoundException extends RuntimeException{
     public FotoNotFoundException(String id) {

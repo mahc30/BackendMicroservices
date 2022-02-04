@@ -1,4 +1,4 @@
-package backendJava.client.exception;
+package backendJava.client.controller.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

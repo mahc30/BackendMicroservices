@@ -1,7 +1,7 @@
 package backendJava.client.controller;
 
 import backendJava.client.dto.FotoDTO;
-import backendJava.client.model.TipoIdentificacion;
+import backendJava.client.client.model.TipoIdentificacion;
 import backendJava.client.service.FotoService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;

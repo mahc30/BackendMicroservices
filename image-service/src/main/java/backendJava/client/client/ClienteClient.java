@@ -1,7 +1,7 @@
 package backendJava.client.client;
 
 import backendJava.client.dto.ClienteDTO;
-import backendJava.client.model.TipoIdentificacion;
+import backendJava.client.client.model.TipoIdentificacion;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

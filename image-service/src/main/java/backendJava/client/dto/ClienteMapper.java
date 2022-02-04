@@ -1,6 +1,6 @@
 package backendJava.client.dto;
 
-import backendJava.client.model.Cliente;
+import backendJava.client.client.model.Cliente;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

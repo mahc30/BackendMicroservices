@@ -1,4 +1,4 @@
-package backendJava.client.exception.Foto;
+package backendJava.client.controller.exception.Foto;
 
 public class FotoFileConversionErrorException extends RuntimeException{
     public FotoFileConversionErrorException(){
