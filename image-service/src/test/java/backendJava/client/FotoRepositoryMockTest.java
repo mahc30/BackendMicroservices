@@ -1,7 +1,7 @@
 package backendJava.client;
 
-import backendJava.client.entity.Foto;
-import backendJava.client.repository.FotoRepository;
+import backendJava.client.domain.entity.Foto;
+import backendJava.client.infrastructure.repository.FotoRepository;
 import org.assertj.core.api.Assertions;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;

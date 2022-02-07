@@ -1,5 +1,6 @@
 package backendJava.client;
 
+import backendJava.client.application.config.SwaggerConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;

@@ -1,15 +1,13 @@
 package backendJava.client;
 
-import backendJava.client.dto.FotoDTO;
-import backendJava.client.dto.FotoMapper;
-import backendJava.client.entity.Foto;
-import backendJava.client.service.FotoService;
+import backendJava.client.application.dto.FotoDTO;
+import backendJava.client.application.mapper.FotoMapper;
+import backendJava.client.domain.entity.Foto;
+import backendJava.client.application.service.FotoService;
 import org.assertj.core.api.Assertions;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;

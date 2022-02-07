@@ -1,17 +1,14 @@
 package backendJava.client;
 
-import backendJava.client.entity.Ciudad;
-import backendJava.client.entity.Cliente;
-import backendJava.client.entity.TipoIdentificacion;
-import backendJava.client.repository.ClienteRepository;
+import backendJava.client.domain.entity.Cliente;
+import backendJava.client.domain.entity.TipoIdentificacion;
+import backendJava.client.infrastructure.repository.ClienteRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest

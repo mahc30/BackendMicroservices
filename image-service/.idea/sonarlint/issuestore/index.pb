@@ -32,5 +32,3 @@ j
 :src/main/java/backendJava/client/client/ClienteClient.java,b\c\bcaf49ef6b995f5f264dff717880d54b9aef1d5f
 z
 Jsrc/main/java/backendJava/client/client/ClienteHystrixFallbackFactory.java,d\4\d4aa13b2feace070344bb612c20fe2b7b5ad9105
-m
-=src/main/java/backendJava/client/service/FotoServiceImpl.java,e\9\e97b6e1a915d26f8c7950f6b8c997a7b61b1f7f4

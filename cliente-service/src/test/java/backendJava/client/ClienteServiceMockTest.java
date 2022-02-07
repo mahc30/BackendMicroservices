@@ -1,13 +1,13 @@
 package backendJava.client;
 
-import backendJava.client.client.FotoClient;
-import backendJava.client.dto.ClienteDTO;
-import backendJava.client.entity.Ciudad;
-import backendJava.client.entity.Cliente;
-import backendJava.client.entity.TipoIdentificacion;
-import backendJava.client.repository.ClienteRepository;
-import backendJava.client.service.ClienteService;
-import backendJava.client.service.ClienteServiceImpl;
+import backendJava.client.infrastructure.feignClient.FotoClient;
+import backendJava.client.application.dto.ClienteDTO;
+import backendJava.client.domain.entity.Ciudad;
+import backendJava.client.domain.entity.Cliente;
+import backendJava.client.domain.entity.TipoIdentificacion;
+import backendJava.client.infrastructure.repository.ClienteRepository;
+import backendJava.client.application.service.ClienteService;
+import backendJava.client.domain.service.ClienteServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
