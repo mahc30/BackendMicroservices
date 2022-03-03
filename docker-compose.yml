@@ -1,0 +1,83 @@
+version: '3'
+
+services:
+  config:
+    container_name: config-service
+    image: config-server
+    build:
+      context: config-service/
+      args:
+        JAR_FILE: build/libs/config-service-0.0.1-SNAPSHOT.jar
+    ports:
+      - "8081:8081"
+    networks:
+      - backend
+
+  image:
+    container_name: image-service
+    image: image-server
+    build:
+      context: image-service/
+      args:
+        JAR_FILE: build/libs/service-client-0.0.1-SNAPSHOT.jar
+    ports: 
+      - "8092:8092"
+    networks:
+      - backend
+    depends_on:
+      - config
+      - registry
+    command: sh -c "/wait && java -jar /app.jar"
+    environment:
+      - WAIT_HOSTS=registry:8099
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=20
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+
+  registry:
+    image:
+      container_name: registry-service
+    image: registry-server
+    build:
+      context: registry-service/
+      args:
+        JAR_FILE: build/libs/registry-service-0.0.1-SNAPSHOT.jar
+    ports: 
+      - "8099:8099"
+    networks:
+      - backend
+    depends_on:
+      - config
+    command: sh -c "/wait && java -jar /app.jar"
+    environment:
+      - WAIT_HOSTS=config:8081
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=20
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+
+  admin:
+    image:
+      container_name: admin-service
+    image: admin-server
+    build:
+      context: admin-service/
+      args:
+        JAR_FILE: build/libs/admin-service-0.0.1-SNAPSHOT.jar
+    ports: 
+      - "8086:8086"
+    networks:
+      - backend
+    depends_on:
+      - config
+    command: sh -c "/wait && java -jar /app.jar"
+    environment:
+      - WAIT_HOSTS=config:8081
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=20
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+
+    
+ 
+  
+networks:
+  backend:
