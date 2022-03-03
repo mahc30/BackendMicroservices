@@ -1,6 +1,19 @@
 version: '3'
 
 services:
+
+  admin:
+    container_name: admin-service
+    image: admin-server
+    build:
+      context: admin-service/
+      args:
+        JAR_FILE: build/libs/admin-service-0.0.1-SNAPSHOT.jar
+    ports: 
+      - "8086:8086"
+    networks:
+      - backend
+
   config:
     container_name: config-service
     image: config-server
@@ -33,10 +46,30 @@ services:
       - WAIT_HOSTS_TIMEOUT=300
       - WAIT_SLEEP_INTERVAL=20
       - WAIT_HOST_CONNECT_TIMEOUT=30
+  
+  client:
+    container_name: client-service
+    image: client-server
+    build:
+      context: cliente-service/
+      args:
+        JAR_FILE: build/libs/service-client-0.0.1-SNAPSHOT.jar
+    ports: 
+      - "8091:8091"
+    networks:
+      - backend
+    depends_on:
+      - config
+      - registry
+    command: sh -c "/wait && java -jar /app.jar"
+    environment:
+      - WAIT_HOSTS=registry:8099
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=20
+      - WAIT_HOST_CONNECT_TIMEOUT=30
 
   registry:
-    image:
-      container_name: registry-service
+    container_name: registry-service
     image: registry-server
     build:
       context: registry-service/
@@ -55,16 +88,15 @@ services:
       - WAIT_SLEEP_INTERVAL=20
       - WAIT_HOST_CONNECT_TIMEOUT=30
 
-  admin:
-    image:
-      container_name: admin-service
-    image: admin-server
+  gateway:
+    container_name: gateway-service
+    image: gateway-server
     build:
-      context: admin-service/
+      context: gateway-service/
       args:
-        JAR_FILE: build/libs/admin-service-0.0.1-SNAPSHOT.jar
+        JAR_FILE: build/libs/gateway-service-0.0.1-SNAPSHOT.jar
     ports: 
-      - "8086:8086"
+      - "8080:8080"
     networks:
       - backend
     depends_on:
@@ -76,8 +108,22 @@ services:
       - WAIT_SLEEP_INTERVAL=20
       - WAIT_HOST_CONNECT_TIMEOUT=30
 
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=backTest
+      - MYSQL_HOST=localhost
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_USER=testUser
+      - MYSQL_PASSWORD=testPassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
     
- 
-  
 networks:
   backend:
+
+volumes:
+  db:

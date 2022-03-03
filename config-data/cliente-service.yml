@@ -6,13 +6,13 @@ server:
 
 spring:
   datasource:
-    url: 'jdbc:mysql://host.docker.internal:3306/backTest'
+    url: 'jdbc:mysql://mysql:3306/backTest'
     driverClassName: com.mysql.jdbc.Driver
     initialization-mode: always
     data: 'classpath:data.sql'
     platform: mysql
-    username: root
-    password: '12345'
+    username: testUser
+    password: testPassword
     testWhileIdle: true
     validationQuery: SELECT 1
 
@@ -44,7 +44,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://host.docker.internal:8099/eureka/
+      defaultZone: http://registry-service:8099/eureka/
   instance:
     prefer-ip-address: true
 

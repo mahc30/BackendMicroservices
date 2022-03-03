@@ -3,10 +3,10 @@ spring:
     name: cliente-service
   cloud:
     config:
-      uri: http://host.docker.internal:8081
+      uri: http://config-service:8081
       username: root
       password: s3cr3t
   boot:
     admin:
       client:
-        url: http://host.docker.internal:8086
+        url: http://admin-service:8086
