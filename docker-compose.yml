@@ -123,28 +123,7 @@ services:
       - db:/var/lib/mysql
     networks:
       - backend
-  
-  sonarqube:
-    container_name: sonarqube
-    image: sonarqube
-    ports: 
-      - "9000:9000"
-    networks:
-      - backend
-    volumes:
-      - "./sonarqubeVol/data:/opt/sonarqube/data"
-      - "./sonarqubeVol/extensions:/opt/sonarqube/extensions"
-
-  jenkins: 
-    container_name: jenkins
-    image: jenkins/jenkins
-    ports:
-      - "8082:8080"
-    volumes:
-      - ./jenkinsVol:/var/jenkins_home
-    networks:
-      - backend
-    
+      
 networks:
   backend:
 
