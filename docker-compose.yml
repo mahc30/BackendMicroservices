@@ -4,7 +4,7 @@ services:
 
   admin:
     container_name: admin-service
-    image: admin-server
+    image: mahc30/admin-server
     build:
       context: admin-service/
       args:
@@ -16,7 +16,7 @@ services:
 
   config:
     container_name: config-service
-    image: config-server
+    image: mahc30/config-server
     build:
       context: config-service/
       args:
@@ -28,7 +28,7 @@ services:
 
   image:
     container_name: image-service
-    image: image-server
+    image: mahc30/image-server
     build:
       context: image-service/
       args:
@@ -49,7 +49,7 @@ services:
   
   client:
     container_name: client-service
-    image: client-server
+    image: mahc30/client-server
     build:
       context: cliente-service/
       args:
@@ -70,7 +70,7 @@ services:
 
   registry:
     container_name: registry-service
-    image: registry-server
+    image: mahc30/registry-server
     build:
       context: registry-service/
       args:
@@ -90,7 +90,7 @@ services:
 
   gateway:
     container_name: gateway-service
-    image: gateway-server
+    image: mahc30/gateway-server
     build:
       context: gateway-service/
       args:
@@ -110,7 +110,7 @@ services:
 
   mysql:
     container_name: mysql
-    image: mysql
+    image: mahc30/mysql
     environment:
       - MYSQL_DATABASE=backTest
       - MYSQL_HOST=localhost
