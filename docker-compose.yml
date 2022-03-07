@@ -110,7 +110,7 @@ services:
 
   mysql:
     container_name: mysql
-    image: mahc30/mysql
+    image: mysql
     environment:
       - MYSQL_DATABASE=backTest
       - MYSQL_HOST=localhost
