@@ -11,6 +11,8 @@ services:
     volumes:
       - "./sonarqubeVol/data:/opt/sonarqube/data"
       - "./sonarqubeVol/extensions:/opt/sonarqube/extensions"
+      - "./sonarqubeVol/conf:/opt/sonarqube/conf"
+      - "./sonarqubeVol/logs:/opt/sonarqube/logs"
 
   jenkins: 
     container_name: jenkins
